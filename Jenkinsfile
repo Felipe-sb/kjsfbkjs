@@ -8,23 +8,12 @@ pipeline{
         }
         stage('run docker'){
             steps{
-                sh 'docker run -i --name prueba-test prueba'
-                sh 'pwd'
+                sh 'docker run -d --rm --name prueba-test prueba'
             }
         }
-        stage('run commands'){
+        stage('commands'){
             steps{
-                sh 'pwd'
-            }
-        }
-        stage('run '){
-            steps{
-                sh 'pwd'
-            }
-        }
-        stage('exit docker'){
-            steps{
-                sh 'exit'
+                sh 'docker exec prueba-test ls'
             }
         }
     }
