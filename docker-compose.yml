@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  ubuntu:
+    build: 
+      context: .
+      dockerfile: Dockerfile  
+    command: 'pwd'
+    container_name: prueba_test
+    ports:
+      - 9000:8080
+
