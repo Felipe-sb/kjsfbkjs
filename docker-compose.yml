@@ -4,6 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile  
+    command: 'mvn --version'
     container_name: ubuntu-test_1
     ports:
       - 9000:8080

@@ -8,16 +8,6 @@ pipeline{
                 }
             }
         }
-        stage('run commands'){
-            steps{
-                script{
-                    sh 'docker-compose exec -d ubuntu-test mvn --version'
-                }
-                script{
-                    sh 'docker-compose logs'
-                }
-            }
-        }
         stage('run log'){
             steps{
                 script{
