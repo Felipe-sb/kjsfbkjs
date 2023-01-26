@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('create image'){
+        stage('change directory'){
             steps{
                 sh 'cd /home/felipe/Documentos'
             }
