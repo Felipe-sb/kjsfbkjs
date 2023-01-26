@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        docker{image 'ubuntu:latest'}
+    }
     stages{
         stage('run docker'){
             steps{
@@ -11,7 +13,7 @@ pipeline{
         stage('run log'){
             steps{
                 script{
-                    sh 'docker-compose logs'
+                    sh 'docker-compose exec -it ubuntu-test_1 bash'
                 }
             }
         }
