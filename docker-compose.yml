@@ -4,7 +4,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile  
-    command: 'mvn --version'
     container_name: prueba_test
     ports:
       - 9000:8080

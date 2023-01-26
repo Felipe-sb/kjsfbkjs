@@ -8,7 +8,14 @@ pipeline{
                 }
             }
         }
-        stage('run logs'){
+        stage('run commands'){
+            steps{
+                script{
+                    sh 'docker-compose exec -d maven --version'
+                }
+            }
+        }
+        stage('run log'){
             steps{
                 script{
                     sh 'docker-compose logs'
@@ -16,5 +23,4 @@ pipeline{
             }
         }
     }
-
 }
