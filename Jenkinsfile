@@ -4,35 +4,21 @@ pipeline{
         stage('build container'){
             steps{
                 script{
-                    sh 'docker build -t busqueda_producto_tests .'
+                    sh 'docker build -t image-test .'
                 }
             }
         }
         stage('run docker'){
             steps{
                 script{
-                    sh 'docker create -p${port}:9000 --name ${port}-busqueda_producto busqueda_producto_tests'
+                    sh 'docker run --rm -it -p${port}:9000 --name prueba-test image_test bash'
                 }
             }
         }
-        stage('start docker'){
+        stage('ver directorio'){
             steps{
                 script{
-                    sh 'docker start ${port}-busqueda_producto'
-                }
-            }
-        }
-        stage('exec comands'){
-            steps{
-                script{
-                    sh 'docker exec -it ${port}-busqueda_producto bash'
-                }
-            }
-        }
-        stage('stop and remove docker'){
-            steps{
-                script{
-                    sh 'docker stop ${port}-busqueda_producto'
+                    sh 'pwd'
                 }
             }
         }
