@@ -8,7 +8,7 @@ pipeline{
         }
         stage('run docker'){
             steps{
-                sh 'docker run -d -v /home/felipe/Descargas/UDD-MatriculasWeb:/home/automatizaciones --name ${name}prueba-test prueba'
+                sh 'docker run -d -v ${path}:/home/automatizaciones --name ${name}prueba-test prueba'
             }
         }
         stage('chrome'){
