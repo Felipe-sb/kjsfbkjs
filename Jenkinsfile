@@ -8,12 +8,12 @@ pipeline{
         }
         stage('run docker'){
             steps{
-                sh 'docker run -d -v /home/felipe/Descargas/UDD-MatriculasWeb:/home/automatozaciones --name ${name}prueba-test prueba'
+                sh 'docker run -d -v /home/felipe/Descargas/UDD-MatriculasWeb:/home/automatizaciones --name ${name}prueba-test prueba'
             }
         }
         stage('change directory'){
             steps{
-                sh 'cd /home/automatozaciones'
+                sh 'cd /home/automatizaciones'
             }
         }
         stage('commands'){
