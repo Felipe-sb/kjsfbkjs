@@ -11,7 +11,7 @@ pipeline{
         stage('run commands'){
             steps{
                 script{
-                    sh 'docker-compose exec -d prueba_test mvn --version'
+                    sh 'docker-compose exec -d ubuntu-test mvn --version'
                 }
                 script{
                     sh 'docker-compose logs'
