@@ -5,8 +5,8 @@ pipeline{
         string(name:'port',defaultValue:'',description:'Indique el puerto')
     }
     evironment{
-        image_name = "${tags}_tests"
-        container_name="${port}-${tags}"
+        image_name = "@Busqueda_producto_tests"
+        container_name="5000-@Busqueda_producto"
     }
     stages{
         stage('build container'){
