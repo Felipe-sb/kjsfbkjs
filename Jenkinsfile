@@ -11,7 +11,7 @@ pipeline{
         stage('run docker'){
             steps{
                 script{
-                    sh 'docker create-p${port}:9000 --name ${port}-busqueda_producto busqueda_producto_tests'
+                    sh 'docker create -p${port}:9000 --name ${port}-busqueda_producto busqueda_producto_tests'
                 }
             }
         }
