@@ -11,7 +11,7 @@ pipeline{
         stage('run docker'){
             steps{
                 script{
-                    sh 'docker run --rm -it -p${port}:9000 --name prueba-test image_test bash'
+                    sh 'docker run --rm -tty -p${port}:9000 --name prueba-test image_test bash'
                 }
             }
         }
