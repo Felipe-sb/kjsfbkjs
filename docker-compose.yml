@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile  
-    command: 'echo "hola comando desde el docker"'
+    command: 'mvn --version'
     container_name: prueba_test
     ports:
       - 9000:8080
