@@ -16,6 +16,9 @@ pipeline{
                 script{
                     sh 'docker exec ${port}-busqueda_producto pwd'
                 }
+                script{
+                    sh 'docker stop ${port}-busqueda_producto'
+                }
             }
         }
         stage('ver directorio'){
