@@ -3,12 +3,17 @@ pipeline{
     stages{
         stage('create image'){
             steps{
+                sh 'cd /home/felipe/Documentos'
+            }
+        }
+        stage('create image'){
+            steps{
                 sh 'docker build -t prueba .'
             }
         }
         stage('run docker'){
             steps{
-                sh 'docker run -d --rm --name prueba-test prueba'
+                sh 'docker run -d --name prueba-test prueba'
             }
         }
         stage('commands'){

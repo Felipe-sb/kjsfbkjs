@@ -1,4 +1,4 @@
-FROM mongo
+FROM mongo:latest
 RUN apt update -y &&\
     apt upgrade -y &&\
     apt install wget -y \
