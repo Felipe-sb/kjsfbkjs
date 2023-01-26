@@ -9,6 +9,7 @@ pipeline{
         stage('run docker'){
             steps{
                 sh 'docker run -i --name prueba-test prueba'
+                sh 'pwd'
             }
         }
         stage('run commands'){
@@ -16,14 +17,14 @@ pipeline{
                 sh 'pwd'
             }
         }
+        stage('run '){
+            steps{
+                sh 'pwd'
+            }
+        }
         stage('exit docker'){
             steps{
                 sh 'exit'
-            }
-        }
-        stage('final'){
-            steps{
-                sh 'cat "final feliz :D"'
             }
         }
     }
