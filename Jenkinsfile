@@ -13,7 +13,7 @@ pipeline{
         }
         stage('chrome'){
             steps{
-                sh 'docker exec ${name}prueba-test google-chrome --version"'
+                sh 'docker exec ${name}prueba-test google-chrome --version'
             }
         }
         stage('exec tests'){
