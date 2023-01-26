@@ -13,18 +13,19 @@ pipeline{
                 script{
                     sh 'docker run --rm -i -p${port}:9000 --name ${port}-busqueda_producto busqueda_producto_tests'
                 }
+            }
+        }
+        stage('exec comands'){
+            steps{
                 script{
                     sh 'docker exec ${port}-busqueda_producto pwd'
                 }
-                script{
-                    sh 'docker stop ${port}-busqueda_producto'
-                }
             }
         }
-        stage('ver directorio'){
+        stage('stop and remove docker'){
             steps{
                 script{
-                    sh 'pwd'
+                    sh 'docker stop ${port}-busqueda_producto'
                 }
             }
         }
