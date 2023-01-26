@@ -4,6 +4,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile  
-    container_name: prueba_test
+    container_name: ubuntu-test_1
     ports:
       - 9000:8080
