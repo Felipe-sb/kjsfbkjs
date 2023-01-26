@@ -8,12 +8,13 @@ pipeline{
                 }
             }
         }
-        stage('ver directorio'){
+        stage('run docker'){
             steps{
                 script{
-                    sh 'pwd'
+                    sh 'docker-compose logs -f'
                 }
             }
         }
     }
+
 }
