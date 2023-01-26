@@ -18,7 +18,7 @@ pipeline{
         }
         stage('exec tests'){
             steps{
-                sh 'docker exec ${name}prueba-test mvn test -D cucumber.filter.tags=${tags}'
+                sh 'docker exec ${name}prueba-test mvn test -D cucumber.filter.tags="${tags}"'
             }
         }
         
