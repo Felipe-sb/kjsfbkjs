@@ -13,6 +13,9 @@ pipeline{
                 script{
                     sh 'docker-compose exec -d prueba_test mvn --version'
                 }
+                script{
+                    sh 'docker-compose logs'
+                }
             }
         }
         stage('run log'){
