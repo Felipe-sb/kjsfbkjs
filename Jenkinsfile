@@ -25,7 +25,7 @@ pipeline{
         stage('exec comands'){
             steps{
                 script{
-                    sh 'docker exec ${port}-busqueda_producto cd /opt'
+                    sh 'docker exec -it ${port}-busqueda_producto bash'
                 }
             }
         }
