@@ -1,10 +1,29 @@
 pipeline{
     agent any
     stages{
+        stage('create image'){
+            steps{
+                sh 'docker build -t prueba .'
+            }
+        }
         stage('run docker'){
             steps{
-                sh 'docker-compose up -d --build'
-                sh 'docker-compose exec -d ubuntu-test pwd'
+                sh 'docker run -i --name prueba-test prueba'
+            }
+        }
+        stage('run commands'){
+            steps{
+                sh 'pwd'
+            }
+        }
+        stage('exit docker'){
+            steps{
+                sh 'exit'
+            }
+        }
+        stage('final'){
+            steps{
+                sh 'cat "final feliz :D"'
             }
         }
     }
