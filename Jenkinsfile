@@ -4,14 +4,14 @@ pipeline{
         stage('build container'){
             steps{
                 script{
-                    sh 'docker build -t ${tags}_tests .'
+                    sh 'docker build -t busqueda_producto_tests .'
                 }
             }
         }
         stage('run docker'){
             steps{
                 script{
-                    sh 'docker run --rm -it -p${port}:9000 --name ${port}-${tags} ${tags}_tests'
+                    sh 'docker run --rm -it -p${port}:9000 --name ${port}-busqueda_producto busqueda_producto_tests'
                 }
             }
         }
