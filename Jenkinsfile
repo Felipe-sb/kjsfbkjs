@@ -8,7 +8,7 @@ pipeline{
         }
         stage('run docker'){
             steps{
-                sh 'docker run -d -p${port}:8090 -v ${path}:/home/automatizaciones --name ${name}prueba-test prueba'
+                sh 'docker run -d -p${port}:8090 -v ${ruta}:/home/automatizaciones --name ${name}prueba-test prueba'
             }
         }
         stage('chrome'){
