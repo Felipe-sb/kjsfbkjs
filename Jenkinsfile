@@ -11,20 +11,11 @@ pipeline{
                 sh 'docker run -d -v /home/felipe/Descargas/UDD-MatriculasWeb:/home/automatizaciones --name ${name}prueba-test prueba'
             }
         }
-        stage('commands ls'){
+        stage('exec tests'){
             steps{
-                sh 'docker exec ${name}prueba-test ls'
+                sh 'docker exec ${name}prueba-test mvn test -Dcucumber.filter.tags="${tags}"'
             }
         }
-        stage('change directory'){
-            steps{
-                sh 'docker exec ${name}prueba-test cd /home/automatizaciones'
-            }
-        }
-        stage('commands'){
-            steps{
-                sh 'docker exec ${name}prueba-test pwd'
-            }
-        }
+        
     }
 }
