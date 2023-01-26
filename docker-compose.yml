@@ -4,8 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile  
-    command: 'pwd'
+    command: 'echo "hola comando desde el docker"'
     container_name: prueba_test
     ports:
       - 9000:8080
-
