@@ -11,7 +11,7 @@ pipeline{
                 sh 'docker run -d -v /home/felipe/Descargas/UDD-MatriculasWeb:/home/automatozaciones --name ${tags.toLowerCase()}prueba-test prueba'
             }
         }
-        stage('run docker'){
+        stage('change directory'){
             steps{
                 sh 'cd /home/automatozaciones'
             }
