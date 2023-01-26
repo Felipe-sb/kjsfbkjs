@@ -8,10 +8,10 @@ pipeline{
                 }
             }
         }
-        stage('run docker'){
+        stage('run logs'){
             steps{
                 script{
-                    sh 'docker-compose logs -f'
+                    sh 'docker-compose logs'
                 }
             }
         }
