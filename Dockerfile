@@ -1,4 +1,5 @@
 FROM mongo:latest
+WORKDIR /home/automatizaciones
 RUN apt update -y &&\
     apt upgrade -y &&\
     apt install wget -y \
