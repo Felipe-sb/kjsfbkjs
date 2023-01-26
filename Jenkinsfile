@@ -13,12 +13,12 @@ pipeline{
         }
         stage('change directory'){
             steps{
-                sh 'cd /home/automatizaciones'
+                sh 'docker exec ${name}prueba-test cd /home/automatizaciones'
             }
         }
         stage('commands'){
             steps{
-                sh 'docker exec prueba-test pwd'
+                sh 'docker exec ${name}prueba-test pwd'
             }
         }
     }
