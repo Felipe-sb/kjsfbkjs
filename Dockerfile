@@ -1,4 +1,4 @@
-FROM mongo:latest
+FROM ubuntu:latest
 WORKDIR /home/automatizaciones
 RUN apt update -y &&\
     apt upgrade -y &&\

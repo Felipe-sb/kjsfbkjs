@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage('change directory'){
-            steps{
-                sh 'cd /home/felipe/Documentos'
-            }
-        }
         stage('create image'){
             steps{
                 sh 'docker build -t prueba .'
