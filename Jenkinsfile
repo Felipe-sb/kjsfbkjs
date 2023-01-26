@@ -13,7 +13,7 @@ pipeline{
         }
         stage('commands'){
             steps{
-                sh 'docker exec prueba-test ls'
+                sh 'docker exec prueba-test pwd'
             }
         }
     }
