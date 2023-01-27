@@ -12,8 +12,10 @@ pipeline{
             }
         }
         stage('exec tests'){
-            def test = tags.replaceAll("%20"," ");
             steps{
+                script{
+                    def test = tags.replaceAll("%20"," ");
+                }
                 sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${test}"'
             }
         }
