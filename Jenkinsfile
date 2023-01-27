@@ -1,4 +1,7 @@
 pipeline{
+    environment{
+        TEST = tags.replaceAll("%20"," ");
+    }
     agent any
     stages{
         stage('create image'){
@@ -13,9 +16,6 @@ pipeline{
         }
         stage('exec tests'){
             steps{
-                script{
-                    def test = tags.replaceAll("%20"," ");
-                }
                 sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${test}"'
             }
         }
