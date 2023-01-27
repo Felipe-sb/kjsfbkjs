@@ -1,6 +1,6 @@
 pipeline{
     environment{
-        TEST = tags.replaceAll("%20"," ");
+        TEST = tags.replace("%20"," ");
     }
     agent any
     stages{
@@ -16,7 +16,7 @@ pipeline{
         }
         stage('exec tests'){
             steps{
-                sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${test}"'
+                sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${TEST}"'
             }
         }
         stage('detener docker'){
