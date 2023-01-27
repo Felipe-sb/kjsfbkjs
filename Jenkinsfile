@@ -8,17 +8,12 @@ pipeline{
         }
         stage('run docker'){
             steps{
-                sh 'docker run -d -p${port}:8090 -v ${ruta}:/home/automatizaciones --name ${name}prueba-test prueba'
-            }
-        }
-        stage('chrome'){
-            steps{
-                sh 'docker exec ${name}prueba-test google-chrome --version'
+                sh 'docker run -d -p${port}:8090 -v /home/felipe/Descargas/${ruta}:/home/automatizaciones --name ${name} prueba'
             }
         }
         stage('exec tests'){
             steps{
-                sh 'docker exec ${name}prueba-test mvn test -D cucumber.filter.tags="${tags}"'
+                sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${tags}"'
             }
         }
         
