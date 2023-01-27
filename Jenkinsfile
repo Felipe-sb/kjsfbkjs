@@ -16,6 +16,15 @@ pipeline{
                 sh 'docker exec ${name} mvn test -D cucumber.filter.tags="${tags}"'
             }
         }
-        
+        stage('detener docker'){
+            steps{
+                sh 'docker stop ${name}'
+            }
+        }
+        stage('eliminar docker'){
+            steps{
+                sh 'docker rm ${name}'
+            }
+        }
     }
 }
